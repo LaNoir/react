@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-
 import RegButton from '../Components/RegRouteButton'
 import App from '../App';
+import Button from '../../node_modules/@material-ui/core/Button';
+import TextField  from '../../node_modules/@material-ui/core/TextField';
+
 class Root extends Component {
 
 
@@ -60,7 +62,7 @@ class Root extends Component {
         return (
           <form onSubmit={this.handleSubmit}>
                Hello This is Main Page<br/>
-                <input 
+                <TextField 
                 placeholder ={'id'}
                 value ={this.id}
                 onChange={this.handleChange}
@@ -68,14 +70,15 @@ class Root extends Component {
                 
                 />
                 <br/>
-                <input 
+                <TextField 
                 placeholder ={'pw'}
                 value ={this.pw}
                 onChange={this.handleChange}
                 name = "pw"
                 
                 />
-                <button type="submit" >로그인</button>
+                  <br/>
+                <Button variant="contained" color="primary" type="submit" >로그인</Button>
                 <RegButton information = {this.state.info}/>
              
             </form>
