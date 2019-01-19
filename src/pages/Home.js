@@ -3,10 +3,14 @@ import {Link} from 'react-router-dom';
 import RegButton from '../Components/RegRouteButton'
 import App from '../App';
 import Button from '../../node_modules/@material-ui/core/Button';
+import Card from '../../node_modules/@material-ui/core/Card';
+import './mycss.css';
 import TextField  from '../../node_modules/@material-ui/core/TextField';
+import LockOutlinedIcon  from '../../node_modules/@material-ui/icons/LockOutlined'
 import '../array'
-class Root extends Component {
+import { Icon } from '@material-ui/core/';
 
+class Root extends Component {
 
   state = {
   logined : 0,  
@@ -54,9 +58,13 @@ class Root extends Component {
 
     render() {
         return (
-          <form onSubmit={this.handleSubmit}>
-               Hello This is Main Page<br/>
-                <TextField 
+
+          <Card className = {"my-card"}>
+          <form className = {"form"} onSubmit={this.handleSubmit}>
+               Hello This is <br/> Main Page  <br/>            
+               <LockOutlinedIcon/><br/> 
+
+                <TextField  className={"textField"} 
                 placeholder ={'id'}
                 value ={this.id}
                 onChange={this.handleChange}
@@ -64,7 +72,7 @@ class Root extends Component {
                 
                 />
                 <br/>
-                <TextField 
+                <TextField className={"textField"}
                 placeholder ={'pw'}
                 value ={this.pw}
                 onChange={this.handleChange}
@@ -76,7 +84,7 @@ class Root extends Component {
                 <RegButton information = {this.state.info}/>
              
             </form>
-  
+            </Card>
         );
     }
 }

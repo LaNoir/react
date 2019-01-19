@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import RegButton from '../Components/RegRouteButton'
+import Card from '../../node_modules/@material-ui/core/Card';
+import './mycss.css';import Button from '../../node_modules/@material-ui/core/Button';
+
 
 function shouldComponentUpdate(nextProps, nextState) {
     const vitalPropsChange = this.props.bar !== nextProps.bar;
@@ -93,8 +96,8 @@ class About extends Component {
 
         else{
         return (
-           
-          <form onSubmit={this.handleSubmit}>
+        <Card className ={"my-card"}>
+          <form className ={"form"} onSubmit={this.handleSubmit}>
                Register!!!<br/>
                 <input 
                 placeholder ={'id'}
@@ -111,10 +114,12 @@ class About extends Component {
                 name = "pw"
                 
                 />
-                <button type="submit" >제출</button>
+                                <br/>
+
+                <Button variant="contained" color="primary" type="submit" >제출</Button>
                 
             </form>
-  
+            </Card>
         );}
     }
 }
