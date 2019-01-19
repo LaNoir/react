@@ -3,6 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import RegButton from '../Components/RegRouteButton'
 import Card from '../../node_modules/@material-ui/core/Card';
 import './mycss.css';import Button from '../../node_modules/@material-ui/core/Button';
+import TextField  from '../../node_modules/@material-ui/core/TextField';
 
 
 function shouldComponentUpdate(nextProps, nextState) {
@@ -59,7 +60,12 @@ class About extends Component {
     this.state.registered = false;}
 
     else{
-    window.info.push([this.state.id,this.state.pw]);
+    var temp = [
+        {uid:this.state.id,
+        upw: this.state.pw
+    }
+    ]
+    window.info = window.info.concat(temp);
     console.log(window.info);
 
     
@@ -99,7 +105,7 @@ class About extends Component {
         <Card className ={"my-card"}>
           <form className ={"form"} onSubmit={this.handleSubmit}>
                Register!!!<br/>
-                <input 
+                <TextField 
                 placeholder ={'id'}
                 value ={this.id}
                 onChange={this.handleChange}
@@ -107,7 +113,7 @@ class About extends Component {
                 
                 />
                 <br/>
-                <input 
+                <TextField 
                 placeholder ={'pw'}
                 value ={this.pw}
                 onChange={this.handleChange}

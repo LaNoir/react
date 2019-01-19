@@ -32,9 +32,10 @@ class Root extends Component {
 
   handleSubmit = (e) => {
 
-    var info = window.info;
+    
+    console.log("B");
 
-    console.log(info);
+    console.log(window.info);
     // 페이지 리로딩 방지
     e.preventDefault();
     // 상태값을 onCreate 를 통하여 부모에게 전달
@@ -43,6 +44,7 @@ class Root extends Component {
     this.ident = window.info.filter(item => item.uid === this.state.id);
     this.ident = this.ident.filter(item => item.upw === this.state.pw);
 
+    console.log("A");
     console.log(this.ident);
 
     (this.ident.length !==0 ) ? alert("login!!") : alert("failed!");
