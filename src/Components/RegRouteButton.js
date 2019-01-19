@@ -10,18 +10,11 @@ class RegButton extends Component{
  
 
     render(){
-        const information = this.props
-
-        console.log(information);
-        console.log("aaaaaa");
-
+       
     return(
       
         <Link to ={{
-            pathname : "/register",
-            state :{
-                info : information
-            }
+            pathname : "/register"
             }}>
         
         

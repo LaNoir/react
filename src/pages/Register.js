@@ -12,7 +12,7 @@ class About extends Component {
 
   state = {
 
-    information : this.props.location.state.info,
+    information : window.info,
 
       id :'',
       pw :'',
@@ -30,7 +30,7 @@ class About extends Component {
       [e.target.name]: e.target.value
     })
     console.log("id: " + this.state.id+" pw: "+ this.state.pw);
-    console.log(this.state.information);
+    console.log(window.info);
   }
 
   handleSubmit = (e) => {
@@ -56,16 +56,17 @@ class About extends Component {
     this.state.registered = false;}
 
     else{
+    window.info.push([this.state.id,this.state.pw]);
+    console.log(window.info);
 
+    
     alert("register성공 loginpage로 이동합니다");
 
     let info = this.state.information;
-    info = info.concat({uid : this.state.id, upw: this.state.pw })
     this.setState({
        information : info, 
     })
     console.log("id: " + this.state.id+" pw: "+ this.state.pw);
-    console.log(info)
     alert("asdasd");
 
     

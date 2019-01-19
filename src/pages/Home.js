@@ -4,20 +4,11 @@ import RegButton from '../Components/RegRouteButton'
 import App from '../App';
 import Button from '../../node_modules/@material-ui/core/Button';
 import TextField  from '../../node_modules/@material-ui/core/TextField';
-
+import '../array'
 class Root extends Component {
 
 
-  state = {info : [{
-    uid : 'lee',
-    upw : 'hihi'
-  },
-  {
-    uid:'heo',
-    upw : 'asdasd'
-  }
-  ],
-   
+  state = {
   logined : 0,  
   id :'',
   pw : ''
@@ -26,6 +17,7 @@ class Root extends Component {
 
 
   handleChange = (e) => {
+    console.log(window.info);
 
     this.setState({
       [e.target.name]: e.target.value
@@ -36,13 +28,15 @@ class Root extends Component {
 
   handleSubmit = (e) => {
 
-    
+    var info = window.info;
+
+    console.log(info);
     // 페이지 리로딩 방지
     e.preventDefault();
     // 상태값을 onCreate 를 통하여 부모에게 전달
     // 상태 초기화
     
-    this.ident = this.state.info.filter(item => item.uid === this.state.id);
+    this.ident = window.info.filter(item => item.uid === this.state.id);
     this.ident = this.ident.filter(item => item.upw === this.state.pw);
 
     console.log(this.ident);
