@@ -4,6 +4,16 @@ import RegButton from '../Components/RegRouteButton'
 import Card from '../../node_modules/@material-ui/core/Card';
 import './mycss.css';import Button from '../../node_modules/@material-ui/core/Button';
 import TextField  from '../../node_modules/@material-ui/core/TextField';
+import Paper from'../../node_modules/@material-ui/core/Paper'
+import { Icon } from '@material-ui/core/';
+import Image from '../Images/SgSyVHQ.jpg';
+
+const styles = {
+  paperContainer: {
+    height: 1000,
+      backgroundImage: `url(${Image})`
+  }
+};
 
 
 function shouldComponentUpdate(nextProps, nextState) {
@@ -102,7 +112,9 @@ class About extends Component {
 
         else{
         return (
-        <Card className ={"my-card"}>
+        <Paper style={styles.paperContainer}>
+
+        <Card className ={"reg-card"}>
           <form className ={"form"} onSubmit={this.handleSubmit}>
                Register!!!<br/>
                 <TextField 
@@ -126,6 +138,7 @@ class About extends Component {
                 
             </form>
             </Card>
+            </Paper>
         );}
     }
 }

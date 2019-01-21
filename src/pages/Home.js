@@ -8,7 +8,16 @@ import './mycss.css';
 import TextField  from '../../node_modules/@material-ui/core/TextField';
 import LockOutlinedIcon  from '../../node_modules/@material-ui/icons/LockOutlined'
 import '../array'
+import Paper from'../../node_modules/@material-ui/core/Paper'
 import { Icon } from '@material-ui/core/';
+import Image from '../Images/SgSyVHQ.jpg';
+
+const styles = {
+  paperContainer: {
+    height: 1000,
+      backgroundImage: `url(${Image})`
+  }
+};
 
 class Root extends Component {
 
@@ -60,7 +69,7 @@ class Root extends Component {
 
     render() {
         return (
-
+          <Paper style={styles.paperContainer}>
           <Card className = {"my-card"}>
           <form className = {"form"} onSubmit={this.handleSubmit}>
                Hello This is <br/> Main Page  <br/>            
@@ -87,6 +96,7 @@ class Root extends Component {
              
             </form>
             </Card>
+            </Paper>
         );
     }
 }
